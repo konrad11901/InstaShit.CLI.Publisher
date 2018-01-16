@@ -12,7 +12,6 @@ namespace InstaShit.CLI.Publisher
         {
             Console.WriteLine("InstaShit.CLI.Publisher");
             Console.WriteLine("Created by Konrad Krawiec");
-            Console.WriteLine("THIS TOOL IS NOT INTENDED FOR PUBLIC USAGE\n");
             if(args.Length != 2)
             {
                 Console.WriteLine("Usage: InstaShit.CLI.Publisher <path> <version>");
