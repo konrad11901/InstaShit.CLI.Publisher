@@ -19,10 +19,6 @@ namespace InstaShit.CLI.Publisher
             }
             string assemblyLocation = args[0];
             string version = args[1];
-            string basePath = Path.Combine(assemblyLocation, "bin", "Release",
-                                           "netcoreapp2.0");
-            string pwd = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            string movePath = Path.Combine(pwd, "tmp");
             if (File.Exists(Path.Combine(assemblyLocation, "InstaShit.sln")))
                 assemblyLocation = Path.Combine(assemblyLocation, "InstaShit");
             else if (!File.Exists(Path.Combine(assemblyLocation, "InstaShit.csproj")))
@@ -30,6 +26,10 @@ namespace InstaShit.CLI.Publisher
                 Console.WriteLine("[ERROR] The given path is not InstaShit.CLI directory.");
                 return;
             }
+            string basePath = Path.Combine(assemblyLocation, "bin", "Release",
+                               "netcoreapp2.0");
+            string pwd = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            string movePath = Path.Combine(pwd, "tmp");
             if (!Directory.Exists(Path.Combine(pwd, "Publisher")))
                 Directory.CreateDirectory(Path.Combine(pwd, "Publisher"));
             if(Directory.Exists(movePath))
