@@ -27,7 +27,7 @@ namespace InstaShit.CLI.Publisher
                 return;
             }
             string basePath = Path.Combine(assemblyLocation, "bin", "Release",
-                               "netcoreapp2.0");
+                               "netcoreapp2.1");
             string pwd = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             string movePath = Path.Combine(pwd, "tmp");
             if (!Directory.Exists(Path.Combine(pwd, "Publisher")))
